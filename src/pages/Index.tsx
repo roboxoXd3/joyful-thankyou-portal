@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Check, MessageSquare, Instagram, Play, Calendar, Share2, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -112,7 +111,7 @@ const ThankYouPage = () => {
         <div className={`text-center space-y-4 ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.8s" }}>
           <div className="inline-block px-6 py-3 rounded-full bg-[#A0D268]/10 border border-[#A0D268]/20">
             <p className="text-[#A0D268] text-lg">
-              Check your email for workshop details!
+              Save the date and stay tuned for more details!
             </p>
           </div>
           <p className="text-white/80 text-sm">

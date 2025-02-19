@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Check, MessageSquare, Instagram, Play, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -52,7 +51,7 @@ const ThankYouPage = () => {
               {/* Welcome Message Section */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left Column - Welcome Image */}
-                <div className="relative aspect-[16/13] bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group">
+                <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group">
                   <img 
                     src="photo-1581091226825-a6a2a5aee158" 
                     alt="Workshop Preview"
@@ -65,22 +64,19 @@ const ThankYouPage = () => {
                   </div>
                 </div>
 
-                {/* Right Column - Video and Actions */}
-                <div className="space-y-6">
-                  {/* Welcome Video */}
-                  <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group hover:border-[#A0D268] transition-colors">
-                    <div className="absolute inset-0 bg-[#1a1a1a]/60"></div>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <Button 
-                        variant="outline" 
-                        size="icon" 
-                        className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-all duration-300 border-none shadow-xl hover:shadow-2xl transform hover:scale-105 group-hover:scale-110 mb-3"
-                        onClick={() => console.log("Play video")}
-                      >
-                        <Play className="w-8 h-8 text-[#222222] ml-1" />
-                      </Button>
-                      <p className="text-white/90 text-sm font-medium mt-2">Watch welcome message</p>
-                    </div>
+                {/* Right Column - Video */}
+                <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group hover:border-[#A0D268] transition-colors">
+                  <div className="absolute inset-0 bg-[#1a1a1a]/60"></div>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <Button 
+                      variant="outline" 
+                      size="icon" 
+                      className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-all duration-300 border-none shadow-xl hover:shadow-2xl transform hover:scale-105 group-hover:scale-110 mb-3"
+                      onClick={() => console.log("Play video")}
+                    >
+                      <Play className="w-8 h-8 text-[#222222] ml-1" />
+                    </Button>
+                    <p className="text-white/90 text-sm font-medium mt-2">Watch welcome message</p>
                   </div>
                 </div>
               </div>

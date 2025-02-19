@@ -53,7 +53,7 @@ const ThankYouPage = () => {
                 {/* Left Column - Welcome Image */}
                 <div className="relative aspect-[16/13] bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group">
                   <img 
-                    src="photo-1486312338219-ce68d2c6f44d" 
+                    src="photo-1581091226825-a6a2a5aee158" 
                     alt="Workshop Preview"
                     className="w-full h-full object-cover brightness-90 transition-transform duration-300 group-hover:scale-105"
                   />

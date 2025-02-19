@@ -38,7 +38,7 @@ const ThankYouPage = () => {
                 <Button 
                   variant="outline" 
                   size="icon" 
-                  className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-colors border-none"
+                  className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-colors border-none shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                   onClick={() => console.log("Play video")}
                 >
                   <Play className="w-8 h-8 text-[#222222]" />
@@ -49,28 +49,33 @@ const ThankYouPage = () => {
         </Card>
 
         {/* Social Buttons */}
-        <div className={`flex flex-col sm:flex-row gap-4 justify-center ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.6s" }}>
+        <div className={`flex flex-col sm:flex-row gap-6 justify-center ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.6s" }}>
           <Button 
-            className="bg-[#A0D268] hover:bg-[#9ACD32] text-[#222222] font-semibold flex items-center gap-2 px-8 py-6 rounded-xl transition-transform hover:scale-105"
+            className="group relative overflow-hidden bg-[#A0D268] hover:bg-[#9ACD32] text-[#222222] font-semibold flex items-center gap-3 px-8 py-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             onClick={() => window.open("#", "_blank")}
           >
-            <MessageSquare className="w-5 h-5" />
-            Join WhatsApp Group
+            <MessageSquare className="w-6 h-6 transition-transform group-hover:scale-110" />
+            <span className="text-lg">Join WhatsApp Group</span>
           </Button>
           
           <Button 
-            className="bg-[#FFD700] hover:bg-[#FFC700] text-[#222222] font-semibold flex items-center gap-2 px-8 py-6 rounded-xl transition-transform hover:scale-105"
+            className="group relative overflow-hidden bg-[#FFD700] hover:bg-[#FFC700] text-[#222222] font-semibold flex items-center gap-3 px-8 py-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
             onClick={() => window.open("#", "_blank")}
           >
-            <Instagram className="w-5 h-5" />
-            Follow on Instagram
+            <Instagram className="w-6 h-6 transition-transform group-hover:scale-110" />
+            <span className="text-lg">Follow on Instagram</span>
           </Button>
         </div>
 
         {/* Additional Information */}
-        <p className={`text-center text-[#A0D268] ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.8s" }}>
-          We've sent all the details to your email. Looking forward to seeing you at the workshop!
-        </p>
+        <div className={`text-center space-y-4 ${isVisible ? "animate-fade-up" : "opacity-0"}`} style={{ animationDelay: "0.8s" }}>
+          <p className="text-[#A0D268] text-lg">
+            We've sent all the details to your email.
+          </p>
+          <p className="text-white/80 text-sm">
+            Looking forward to seeing you at the workshop!
+          </p>
+        </div>
       </div>
     </div>
   );

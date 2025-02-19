@@ -1,12 +1,11 @@
 
 import { useState, useEffect } from "react";
-import { Check, MessageSquare, Instagram, Play, Calendar, Share2, Download, Image } from "lucide-react";
+import { Check, MessageSquare, Instagram, Play, Calendar, Share2, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const ThankYouPage = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [showVideo, setShowVideo] = useState(true);
 
   useEffect(() => {
     setIsVisible(true);
@@ -49,73 +48,61 @@ const ThankYouPage = () => {
               </Button>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Welcome Video/Image Section */}
-              <div className="space-y-4">
-                <div className="flex items-center justify-end gap-2 mb-2">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className={`px-3 py-1 ${showVideo ? 'bg-[#A0D268]/10 text-[#A0D268]' : 'text-gray-400'}`}
-                    onClick={() => setShowVideo(true)}
-                  >
-                    <Play className="w-4 h-4 mr-1" />
-                    Video
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className={`px-3 py-1 ${!showVideo ? 'bg-[#A0D268]/10 text-[#A0D268]' : 'text-gray-400'}`}
-                    onClick={() => setShowVideo(false)}
-                  >
-                    <Image className="w-4 h-4 mr-1" />
-                    Image
-                  </Button>
+            <div className="space-y-6">
+              {/* Welcome Message Section */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div className="relative aspect-[4/3] bg-[#222222] rounded-xl overflow-hidden border border-[#444444]">
+                  <img 
+                    src="photo-1486312338219-ce68d2c6f44d" 
+                    alt="Workshop Preview"
+                    className="w-full h-full object-cover brightness-90"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white text-lg font-semibold mb-2">Welcome to the Workshop</h3>
+                    <p className="text-white/80 text-sm">Join us for an immersive learning experience</p>
+                  </div>
                 </div>
-                <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444]">
-                  {showVideo ? (
+
+                <div className="space-y-6">
+                  <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group hover:border-[#A0D268] transition-colors">
                     <div className="absolute inset-0 flex items-center justify-center">
                       <Button 
                         variant="outline" 
                         size="icon" 
-                        className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-all duration-300 border-none shadow-xl hover:shadow-2xl transform hover:scale-105"
+                        className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-all duration-300 border-none shadow-xl hover:shadow-2xl transform hover:scale-105 group-hover:scale-110"
                         onClick={() => console.log("Play video")}
                       >
                         <Play className="w-8 h-8 text-[#222222]" />
                       </Button>
                     </div>
-                  ) : (
-                    <div className="absolute inset-0">
-                      <img 
-                        src="photo-1486312338219-ce68d2c6f44d" 
-                        alt="Workshop Preview"
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <p className="text-white/90 text-sm font-medium">Watch welcome message</p>
                     </div>
-                  )}
-                </div>
-              </div>
+                  </div>
 
-              {/* Quick Actions */}
-              <div className="space-y-4">
-                <h3 className="text-lg font-medium text-white">Quick Actions</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <Button 
-                    variant="outline"
-                    className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444]"
-                    onClick={() => console.log("Download schedule")}
-                  >
-                    <Download className="w-4 h-4 mr-2" />
-                    Schedule
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444]"
-                    onClick={() => console.log("Share")}
-                  >
-                    <Share2 className="w-4 h-4 mr-2" />
-                    Share
-                  </Button>
+                  {/* Quick Actions */}
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-medium text-white">Quick Actions</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <Button 
+                        variant="outline"
+                        className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444]"
+                        onClick={() => console.log("Download schedule")}
+                      >
+                        <Download className="w-4 h-4 mr-2" />
+                        Schedule
+                      </Button>
+                      <Button 
+                        variant="outline"
+                        className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444]"
+                        onClick={() => console.log("Share")}
+                      >
+                        <Share2 className="w-4 h-4 mr-2" />
+                        Share
+                      </Button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

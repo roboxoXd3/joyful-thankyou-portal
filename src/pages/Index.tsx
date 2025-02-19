@@ -1,17 +1,19 @@
+
 import { useState, useEffect } from "react";
-import { Check, MessageSquare, Instagram, Play, Calendar, Share2, Download } from "lucide-react";
+import { Check, MessageSquare, Instagram, Play, Calendar, Share2, Download, Image } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 const ThankYouPage = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showVideo, setShowVideo] = useState(true);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   const workshopTitle = "Professional Growth Mastery Workshop";
-  const workshopDate = "April 15, 2024"; // Example date
+  const workshopDate = "April 15, 2024";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1a1a1a] to-[#222222] px-4 py-12">
@@ -48,17 +50,49 @@ const ThankYouPage = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Welcome Video Section */}
-              <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444]">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Button 
-                    variant="outline" 
-                    size="icon" 
-                    className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-all duration-300 border-none shadow-xl hover:shadow-2xl transform hover:scale-105"
-                    onClick={() => console.log("Play video")}
+              {/* Welcome Video/Image Section */}
+              <div className="space-y-4">
+                <div className="flex items-center justify-end gap-2 mb-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={`px-3 py-1 ${showVideo ? 'bg-[#A0D268]/10 text-[#A0D268]' : 'text-gray-400'}`}
+                    onClick={() => setShowVideo(true)}
                   >
-                    <Play className="w-8 h-8 text-[#222222]" />
+                    <Play className="w-4 h-4 mr-1" />
+                    Video
                   </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className={`px-3 py-1 ${!showVideo ? 'bg-[#A0D268]/10 text-[#A0D268]' : 'text-gray-400'}`}
+                    onClick={() => setShowVideo(false)}
+                  >
+                    <Image className="w-4 h-4 mr-1" />
+                    Image
+                  </Button>
+                </div>
+                <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444]">
+                  {showVideo ? (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Button 
+                        variant="outline" 
+                        size="icon" 
+                        className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-all duration-300 border-none shadow-xl hover:shadow-2xl transform hover:scale-105"
+                        onClick={() => console.log("Play video")}
+                      >
+                        <Play className="w-8 h-8 text-[#222222]" />
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="absolute inset-0">
+                      <img 
+                        src="photo-1486312338219-ce68d2c6f44d" 
+                        alt="Workshop Preview"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
 

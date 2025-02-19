@@ -1,5 +1,6 @@
+
 import { useState, useEffect } from "react";
-import { Check, MessageSquare, Instagram, Play, Calendar, Share2, Download } from "lucide-react";
+import { Check, MessageSquare, Instagram, Play, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -79,29 +80,6 @@ const ThankYouPage = () => {
                         <Play className="w-8 h-8 text-[#222222] ml-1" />
                       </Button>
                       <p className="text-white/90 text-sm font-medium mt-2">Watch welcome message</p>
-                    </div>
-                  </div>
-
-                  {/* Quick Actions */}
-                  <div className="space-y-3">
-                    <h3 className="text-lg font-medium text-white">Quick Actions</h3>
-                    <div className="grid grid-cols-2 gap-4">
-                      <Button 
-                        variant="outline"
-                        className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444] h-12"
-                        onClick={() => console.log("Download schedule")}
-                      >
-                        <Download className="w-4 h-4 mr-2" />
-                        Schedule
-                      </Button>
-                      <Button 
-                        variant="outline"
-                        className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444] h-12"
-                        onClick={() => console.log("Share")}
-                      >
-                        <Share2 className="w-4 h-4 mr-2" />
-                        Share
-                      </Button>
                     </div>
                   </div>
                 </div>

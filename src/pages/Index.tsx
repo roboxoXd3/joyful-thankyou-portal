@@ -50,34 +50,36 @@ const ThankYouPage = () => {
             
             <div className="space-y-6">
               {/* Welcome Message Section */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <div className="relative aspect-[4/3] bg-[#222222] rounded-xl overflow-hidden border border-[#444444]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Left Column - Welcome Image */}
+                <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group">
                   <img 
                     src="photo-1486312338219-ce68d2c6f44d" 
                     alt="Workshop Preview"
-                    className="w-full h-full object-cover brightness-90"
+                    className="w-full h-full object-cover brightness-90 transition-transform duration-300 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-white text-lg font-semibold mb-2">Welcome to the Workshop</h3>
                     <p className="text-white/80 text-sm">Join us for an immersive learning experience</p>
                   </div>
                 </div>
 
+                {/* Right Column - Video and Actions */}
                 <div className="space-y-6">
+                  {/* Welcome Video */}
                   <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group hover:border-[#A0D268] transition-colors">
-                    <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-[#1a1a1a]/60"></div>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
                       <Button 
                         variant="outline" 
                         size="icon" 
-                        className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-all duration-300 border-none shadow-xl hover:shadow-2xl transform hover:scale-105 group-hover:scale-110"
+                        className="w-16 h-16 rounded-full bg-[#A0D268] hover:bg-[#9ACD32] transition-all duration-300 border-none shadow-xl hover:shadow-2xl transform hover:scale-105 group-hover:scale-110 mb-3"
                         onClick={() => console.log("Play video")}
                       >
-                        <Play className="w-8 h-8 text-[#222222]" />
+                        <Play className="w-8 h-8 text-[#222222] ml-1" />
                       </Button>
-                    </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="text-white/90 text-sm font-medium">Watch welcome message</p>
+                      <p className="text-white/90 text-sm font-medium mt-2">Watch welcome message</p>
                     </div>
                   </div>
 
@@ -87,7 +89,7 @@ const ThankYouPage = () => {
                     <div className="grid grid-cols-2 gap-4">
                       <Button 
                         variant="outline"
-                        className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444]"
+                        className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444] h-12"
                         onClick={() => console.log("Download schedule")}
                       >
                         <Download className="w-4 h-4 mr-2" />
@@ -95,7 +97,7 @@ const ThankYouPage = () => {
                       </Button>
                       <Button 
                         variant="outline"
-                        className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444]"
+                        className="w-full bg-[#333333] hover:bg-[#444444] text-white border-[#444444] h-12"
                         onClick={() => console.log("Share")}
                       >
                         <Share2 className="w-4 h-4 mr-2" />

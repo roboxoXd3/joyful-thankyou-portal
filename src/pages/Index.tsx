@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Check, MessageSquare, Instagram, Play, Calendar, Share2, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -52,7 +51,7 @@ const ThankYouPage = () => {
               {/* Welcome Message Section */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left Column - Welcome Image */}
-                <div className="relative aspect-video bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group">
+                <div className="relative aspect-[16/10] bg-[#222222] rounded-xl overflow-hidden border border-[#444444] group">
                   <img 
                     src="photo-1486312338219-ce68d2c6f44d" 
                     alt="Workshop Preview"
